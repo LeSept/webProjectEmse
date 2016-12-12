@@ -33,4 +33,5 @@ Fonctionnalités :
 
 
   - Rq : Find a name
+  -Utiliser **balsamiqu** pour designer les maquettes des pages
 
