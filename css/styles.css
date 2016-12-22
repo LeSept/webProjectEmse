@@ -10,8 +10,12 @@
   justify-content: space-around;
 }
 
-.border {
+.navbar-item {
 	 border: 2px solid black;
-	 /*flex-shrink: 1;
-	 flex-grow: 1;*/
+	 text-align: center;
+}
+
+h1 {
+	text-align: center;
+	background: #00ff00;
 }
