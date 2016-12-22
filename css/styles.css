@@ -1,0 +1,17 @@
+* {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+}
+.container {
+  display: flex; 
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+}
+
+.border {
+	 border: 2px solid black;
+	 /*flex-shrink: 1;
+	 flex-grow: 1;*/
+}
