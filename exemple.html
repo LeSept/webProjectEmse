@@ -9,15 +9,22 @@
         <link rel="stylesheet" href="css/media.css">
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
         <script type="text/javascript" src="js/feedapi.js"></script>
-        <script type="text/javascript">
-            google.load("feeds", "1");
-            google.setOnLoadCallback(initialize);
-        </script>
+        
 
     </head>
     
-    <body>
-        <div id="feed">
+    <body ng-app="myApp">
+        <div ng-controller= "searchSpace">
+            <input ng-model="searchBar" type="search">
+            <div ng-bind="searchResult"></div>
         </div>
     </body>
+    
+    <script type="text/javascript" src="js/sourcesData.js"></script>
+    <script type="text/javascript">
+        google.load("feeds", "1");
+        //google.setOnLoadCallback(user.initialize);
+    </script>
+    <script type="text/javascript" src="js/angularjs.js"></script>
+    
 </html>
