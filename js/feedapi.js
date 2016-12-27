@@ -29,16 +29,16 @@ function findDone(result) {
   // Make sure we didn't get an error.
   if (!result.error) {
     // Get content div
-    var content = document.getElementById('feed');
-    var html = '';
+    
+    var content = document.getElementById('result');
+      var html = '';
 
     // Loop through the results and print out the title of the feed and link to
     // the url.
     for (var i = 0; i < result.entries.length; i++) {
       var entry = result.entries[i];
-      html += '<p>' + entry.title + '</p>';
+      html += '<div class = "summary"><p class = "summaryTitle">' + entry.title + '</p><p class = "summaryContent">'+ entry.contentSnippet+'</p><a href="'+entry.link+'">Lire l\'article sur le web</a> </div>';
     }
-    return html;
+    content.innerHTML = html;
   }
-  return "error";
 }
