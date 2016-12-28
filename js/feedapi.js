@@ -21,7 +21,7 @@ function displayNews(src) {
 
 function searchKeyword(keyword) {
   // Query for president feeds on cnn.com
-  var query = 'site:topito.com '+keyword;
+  var query = 'site:lemonde.fr '+keyword;
   google.feeds.findFeeds(query, findDone);
 }
 
@@ -30,15 +30,22 @@ function findDone(result) {
   if (!result.error) {
     // Get content div
     
-    var content = document.getElementById('result');
+    var container = document.getElementById('articles-container');
       var html = '';
 
     // Loop through the results and print out the title of the feed and link to
     // the url.
     for (var i = 0; i < result.entries.length; i++) {
       var entry = result.entries[i];
-      html += '<div class = "summary"><p class = "summaryTitle">' + entry.title + '</p><p class = "summaryContent">'+ entry.contentSnippet+'</p><a href="'+entry.link+'">Lire l\'article sur le web</a> </div>';
+      if(i<2){
+          html += '<div class = "articles-item articles-large"><h2 class = "summaryTitle">' + entry.title + '</h2><p class = "summaryContent">'+ entry.contentSnippet+'</p><a href="'+entry.link+'">Lire l\'article sur le web</a> </div>';
+      }else if(i<8){
+          html += '<div class = "articles-item articles-medium"><h2 class = "summaryTitle">' + entry.title + '</h2><p class = "summaryContent">'+ entry.contentSnippet+'</p><a href="'+entry.link+'">Lire l\'article sur le web</a> </div>';
+      }else{
+          html += '<div class = "articles-item articles-small"><h2 class = "summaryTitle">' + entry.title + '</h2><p class = "summaryContent">'+ entry.contentSnippet+'</p><a href="'+entry.link+'">Lire l\'article sur le web</a> </div>';
+      }
+      
     }
-    content.innerHTML = html;
+    container.innerHTML = html;
   }
 }

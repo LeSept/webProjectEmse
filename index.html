@@ -6,8 +6,12 @@
 	<title>LeSept</title>
 	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="css/media.css">
+    <script src="//code.angularjs.org/snapshot/angular.min.js"></script>
+    <script src="//code.angularjs.org/snapshot/angular-sanitize.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="js/feedapi.js"></script>
   </head>
-  <body>
+  <body ng-app="myApp">
     <header>
       <nav>
         <div id="navbar-container" class="navbar-container">
@@ -32,74 +36,27 @@
         </div>
       </nav>
     </header>
+      
+      
     <h1>Title</h1>
-    <div id="articles-container" class="articles-container">
-    	<div class="articles-large">
-    		<div class="articles-item ">
-    			<h2>Title 1</h2>
-    			<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTl5tc1MD-ZyrKFdHMQxoDlErzg-J12uNctZcj0Z5o1Xyah4GmbUQ">
-    			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </p>
-    		</div>
-    	</div>
-    	<div class="articles-small">
-    		<div class="articles-item ">
-    			<h2>Title 2</h2>
-    			<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSh_okgvk2FCAgFEceguZWN9Vx2807EXo7eL5fWwPgcMaIbL3Ac">
-    			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate</p>
-    		</div>
-    	</div>
-    	<div class="articles-small">
-    		<div class="articles-item ">
-    			<h2>Title 3</h2>
-    			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKemgY5ydLSt5JcuwJqNtREMQfrDR5KMfOn1qcQE7g1zmlOMFN">
-    			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend</p>
-    		</div>
-    	</div>
-    	<div class="articles-medium">
-    		<div class="articles-item ">
-    			<h2>Title 4</h2>
-    			<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTWDKNcvMUGrZbi5tmgzdHEEO_8CyQaPFsdz5qvD3cbPKStuWXMCw">
-    			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend</p>
-    		</div>
-    	</div>
-    	<div class="articles-medium">
-    		<div class="articles-item ">
-    			<h2>Title 5</h2>
-    			<img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSyLRLBeOAbwRP3mZEGRXRhkX_nPuply2IXLBKqnIm_dqCrj6Lc">
-    			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,</p>
-    		</div>
-    	</div>
-    	<div class="articles-medium">
-    		<div class="articles-item ">
-    			<h2>Title 6</h2>
-    			<img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSr50UnYNGS3l_lAfqD2Yric3gcpHVN-lkvfJxeucFh4Lg-OShE">
-    			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa</p>
-    		</div>
-    	</div>
+    
+    <div ng-controller= "searchSpace">
+        <input ng-model="searchBar" type="search">
+        <div id="result" ng-bind="search()">
+
+        </div>
+        <div id="articles-container" class="articles-container" ng-bind="search()">
     	
-    	<div class="articles-small">
-    		<div class="articles-item ">
-    			<h2>Title 7</h2>
-    			<img src="http://pix.iemoji.com/images/emoji/apple/ios-9/256/pouting-face.png">
-    			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa</p>
-    		</div>
-    	</div>
-    	<div class="articles-small">
-    		<div class="articles-item ">
-    			<h2>Title 8</h2>
-    			<img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT-IpXjAcefd_kO47dkVu2tVRSvewBq8gArlNVHBVUyfx80qEhSQg">
-    			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate</p>
-    		</div>
-    	</div>
-    	<div class="articles-small">
-    		<div class="articles-item ">
-    			<h2>Title 9</h2>
-    			<img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT-IpXjAcefd_kO47dkVu2tVRSvewBq8gArlNVHBVUyfx80qEhSQg">
-    			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </p>
-    		</div>
-    	</div>
+        </div>
     </div>
   	
 
   </body>
+    
+    <script type="text/javascript" src="js/sourcesData.js"></script>
+    <script type="text/javascript">
+        google.load("feeds", "1");
+        //google.setOnLoadCallback(user.initialize);
+    </script>
+    <script type="text/javascript" src="js/angularjs.js"></script>
 </html>

@@ -64,6 +64,59 @@ h1 {
 }
 
 h2 {
+}
+
+.navbar-item > p {
+	 font-size: 1.3em;
+	 color: #f8f3e6;
+}
+
+.articles-item {
+	margin: 10px;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: #c4d4e0;
+}
+
+.articles-item > p {
+	color: #193446;
+}
+
+img {
+	max-height: 50px;
+	min-width: 30px;
+	width: auto;
+	height: auto;
+	margin: 10px;
+}
+
+.articles-container {
+	display: flex; 
+  	flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
+    padding: 20px;
+}
+
+
+h1 {
+	font-size: 3em;
+	text-align: center;
+	color: #193446;
+	padding: 20px;
+}
+
+h2 {
+	align-self: flex-end;
+	color: #193446;
+	font-size: 1.3em;
+}
+
+.dropdown-content {
 	align-self: flex-end;
 	color: #193446;
 	font-size: 1.3em;
