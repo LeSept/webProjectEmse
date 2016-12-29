@@ -1,17 +1,24 @@
-function displayNews(src) {
-  var feed = new google.feeds.Feed(src);
-  feed.load(function(result) {
-    if (!result.error) {
-      var content = document.getElementById('feed');
-      var html = '';
-      for (var i = 0; i < result.feed.entries.length; i++) {
-        var entry = result.feed.entries[i];
-        html += '<p>' + entry.title + '</p>';
+/*function displayNews(category) {
+    
+    
+    //on parcourt les catégories des sources à disposition
+    for(var src in sources){
+        if(src != "sites"){
+            for(var url in sources[src]){
+                //alert(sources[src][url]);
+                var feed = new google.feeds.Feed(sources[src][url]);
+                feed.load(function(result) {
+                    alert(0);
+                    if (!result.error) {
+                        for (var i = 0; i < result.feed.entries.length; i++) {
+                             arrayResult.push(result.feed.entries[i].title);
+                        }
+                    }
+                });
+            }
         }
-        content.innerHTML += html;
-      }
-    });
-  }
+    } 
+}
 
 
 
@@ -21,8 +28,12 @@ function displayNews(src) {
 
 function searchKeyword(keyword) {
   // Query for president feeds on cnn.com
-  var query = 'site:lemonde.fr '+keyword;
-  google.feeds.findFeeds(query, findDone);
+    document.getElementById('articles-container').innerHTML = '';
+    for(var site in sources.sites){
+        var query = 'site:'+sources.sites[site]+ ' '+keyword;
+        google.feeds.findFeeds(query, findDone);
+    }
+    
 }
 
 function findDone(result) {
@@ -46,6 +57,6 @@ function findDone(result) {
       }
       
     }
-    container.innerHTML = html;
+    container.innerHTML += html;
   }
 }

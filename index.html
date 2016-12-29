@@ -38,17 +38,20 @@
     </header>
       
       
-    <h1>Title</h1>
     
-    <div ng-controller= "searchSpace">
-        <input ng-model="searchBar" type="search">
-        <div id="result" ng-bind="search()">
-
-        </div>
-        <div id="articles-container" class="articles-container" ng-bind="search()">
-    	
-        </div>
-    </div>
+      
+      <div id="articles-container" class="articles-container" ng-controller="articlesSpace">
+          
+          <h1 ng-bind="category">{{category}}</h1>
+          <div class="articles-item" ng-repeat="article in articles|orderBy: '-date'">
+              <p class="articles-date">{{article.date}}</p>
+              <p class="articles-media">{{article.media}}</p>
+              <h2>{{article.title}}</h2>
+              <p class="articles-content">{{article.contentSnippet}}</p>
+              <a class="articles-date" href={{article.link}}>Lire l'article sur le web</a>
+              <p class="articles-categories">{{article.categories}}</p>
+          </div>
+      </div>
   	
 
   </body>

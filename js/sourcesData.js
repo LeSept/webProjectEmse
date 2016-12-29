@@ -19,6 +19,13 @@ var sources = {
         "europe": "http://www.france24.com/fr/europe/rss"
     },
     
-    "topito": "http://feeds.feedburner.com/topito"
+    "topito": {
+        "une":"http://feeds.feedburner.com/topito"
+    },
+    
+    /*"lefigaro": {
+        "une":"http://www.lefigaro.fr/rss/figaro_actualites-a-la-une.xml",
+        "politique":"http://www.lefigaro.fr/rss/figaro_politique.xml"
+    }*/
     
 }
