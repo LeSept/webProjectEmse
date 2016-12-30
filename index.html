@@ -10,18 +10,23 @@
     <script src="//code.angularjs.org/snapshot/angular-sanitize.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript" src="js/feedapi.js"></script>
+
+
   </head>
+  
   <body ng-app="myApp">
     <header>
       <nav>
+	  <iframe id="forecast_embed" type="text/html" frameborder="0" height="150" width="50%" src="http://forecast.io/embed/#lat=45.441224&lon=4.385991&name=Saint-etienne&color=#00aaff&font=Georgia&units=uk"> </iframe>
         <div id="navbar-container" class="navbar-container">
           <div id="navbar-login" class="col-lg-6 col-md-6 col-sm-12 navbar-item">
           	<p>Login Area</p>
           	
           </div>
           <div id="navbar-meteo" class="col-lg-3 col-md-6 col-sm-12 navbar-item">
-          	<p>Meteo Area</p>
-          </div>
+            	<p>Est ce que on peut ecrire d'autre chose ici?</p>
+		  </div>
+		  
           <div id="navbar-category" class="col-lg-3 col-md-12 col-sm-12 navbar-item">
           	<p>Category</p>
           	<div class="dropdown-content">
