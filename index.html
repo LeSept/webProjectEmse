@@ -6,27 +6,34 @@
 	<title>LeSept</title>
 	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="css/media.css">
+      
+     <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      
     <script src="//code.angularjs.org/snapshot/angular.min.js"></script>
     <script src="//code.angularjs.org/snapshot/angular-sanitize.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript" src="js/feedapi.js"></script>
-
-
+      
+    <link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/media.css">
   </head>
   
   <body ng-app="myApp">
     <header>
-      <nav>
-          <div class="div-meteo">
-              <p>tets</p>
-            <iframe id="forecast_embed" type="text/html" frameborder="0" height="50" width="100%" style="color:red" src="http://forecast.io/embed/#lat=45.441224&lon=4.385991&name=Saint-etienne&color=#00aaff&font=Georgia&units=uk">
+      <div class="div-meteo">
+            <iframe id="forecast_embed" type="text/html" frameborder="0" height="210" width="50%" src="http://forecast.io/embed/#lat=45.441224&lon=4.385991&name=Saint-etienne&color=#00aaff&font=Georgia&units=uk">
             </iframe>
-          </div>
-	  
+        </div>
+        
+      <nav>
         <div id="navbar-container" class="navbar-container">
           <div id="navbar-login" class="col-lg-6 col-md-6 col-sm-12 navbar-item">
           	<p>Login Area</p>
-          	
           </div>
           <div id="navbar-meteo" class="col-lg-3 col-md-6 col-sm-12 navbar-item">
             	<p>Est ce que on peut ecrire d'autre chose ici?</p>
@@ -46,8 +53,6 @@
         </div>
       </nav>
     </header>
-      
-      
     
       
       <div id="articles-container" class="articles-container" ng-controller="articlesSpace">
@@ -59,6 +64,32 @@
               <h2>{{article.title}}</h2>
               <p class="articles-content">{{article.contentSnippet}}</p>
               <a class="articles-link col-sm-4" href={{article.link}}>Lire l'article sur le web</a>
+              
+              <div class="container">
+              <!-- Trigger the modal with a button -->
+              <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+              <!-- Modal -->
+              <div class="modal fade" id="myModal" role="dialog">
+                  <div class="modal-dialog">
+    
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">Titre</h4>
+                          </div>
+                          <div class="modal-body">
+                            <p>Le lien s'ouvre ici.</p>
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                          </div>
+                      </div>
+      
+                  </div>
+              </div>
+              </div>
+              
               <p class="articles-categories">{{article.categories}}</p>
           </div>
       </div>
@@ -66,6 +97,7 @@
 
   </body>
     
+    <script type="text/javascript" src="js/forNav.js"></script>
     <script type="text/javascript" src="js/sourcesData.js"></script>
     <script type="text/javascript">
         google.load("feeds", "1");
