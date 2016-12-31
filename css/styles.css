@@ -8,7 +8,7 @@
 
 body {
     background-color: beige;
-    background-image: url("../seven.png");
+    background-image: url("../images/seven.png");
     background-position: center;
     background-repeat: no-repeat;
     background-origin: content-box;
@@ -141,5 +141,5 @@ h2 {
     text-align: center;
     height:210;
     width: auto;
-    background-image: url("../nav.png");
+    background-image: url("../images/nav.png");
 }
