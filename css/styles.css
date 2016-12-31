@@ -13,11 +13,11 @@ body {
     background-repeat: no-repeat;
     background-origin: content-box;
     background-attachment: fixed;
-    background-size: 80px 60px;
+    background-size: 1400px;
 }
 
 .navbar-container {
-    width: 100%;
+  width: 100%;
   display: flex; 
   flex-wrap: wrap;
   flex-direction: row-reverse;

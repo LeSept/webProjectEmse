@@ -8,20 +8,13 @@
 	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="css/media.css">
       
-     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-      <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       
     <script src="//code.angularjs.org/snapshot/angular.min.js"></script>
     <script src="//code.angularjs.org/snapshot/angular-sanitize.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript" src="js/feedapi.js"></script>
-      
-    <link rel="stylesheet" href="css/styles.css">
-	<link rel="stylesheet" href="css/media.css">
   </head>
   
   <body ng-app="myApp">
@@ -64,33 +57,7 @@
               <p class="articles-media">{{article.media}}</p>
               <h2>{{article.title}}</h2>
               <p class="articles-content">{{article.contentSnippet}}</p>
-              <a class="articles-link col-sm-4" href={{article.link}}>Lire l'article sur le web</a>
-              
-              <div class="container">
-              <!-- Trigger the modal with a button -->
-              <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-              <!-- Modal -->
-              <div class="modal fade" id="myModal" role="dialog">
-                  <div class="modal-dialog">
-    
-                      <!-- Modal content-->
-                      <div class="modal-content">
-                          <div class="modal-header">
-                              <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h4 class="modal-title">Titre</h4>
-                          </div>
-                          <div class="modal-body">
-                            <p>Le lien s'ouvre ici.</p>
-                          </div>
-                          <div class="modal-footer">
-                              <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-                          </div>
-                      </div>
-      
-                  </div>
-              </div>
-              </div>
-              
+              <a class="articles-link col-sm-4" href={{article.link}}>Lire l'article sur le web</a>              
               <p class="articles-categories">{{article.categories}}</p>
           </div>
       </div>
