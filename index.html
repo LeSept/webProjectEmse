@@ -55,7 +55,7 @@
       <div id="articles-container" class="articles-container" ng-controller="articlesSpace">
           
           <h1 class="col-lg-12 col-sm-12 col-md-12" ng-bind="category">{{category}}</h1>
-          <div class="articles-item {{article.type}}" ng-repeat="article in articles|orderBy: '-date'">
+          <div class="articles-item {{article.type}}" ng-repeat="article in articles|orderBy: '-date'|filter: {title : category} as results">
               <p class="articles-date">{{article.date}}</p>
               <p class="articles-media">{{article.media}}</p>
               <h2>{{article.title}}</h2>

@@ -1,8 +1,7 @@
 var myApp = angular.module('myApp',[]);
 
 myApp.controller("articlesSpace", function($scope){
-    $scope.category = "une";
-    $scope.articles = "3";
+    $scope.category = "attentat";
         
     displayNews = function(scope) {
     //on parcourt les catégories des sources à disposition
