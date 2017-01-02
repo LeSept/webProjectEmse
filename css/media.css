@@ -13,22 +13,22 @@
   .col-lg-2 {
     width: 16.66%;
   }
-  .col-lg-3 {
-    width: 25%;
+  .col-lg-3, .articles-small {
+    width: 21%;
   }
-  .col-lg-4, .articles-small {
-    width: 33%;
+  .col-lg-4, .articles-medium {
+    width: 31%;
   }
   .col-lg-5 {
     width: 41.66%;
   }
-  .col-lg-6, .articles-medium {
+  .col-lg-6, .articles-large {
     width: 48%;
   }
   .col-lg-7 {
     width: 58.33%;
   }
-  .col-lg-8, .articles-large {
+  .col-lg-8 {
     width: 66.66%;
   }
   .col-lg-9 {
@@ -43,6 +43,14 @@
   .col-lg-12 {
     width: 100%;
   }
+    
+.openHamburger {
+    display: none;
+    }
+    
+.closeHamburger {
+    display: none;
+    }
 }
 
 /********** Medium devices only **********/
@@ -54,16 +62,16 @@
     width: 16.66%;
   }
   .col-md-3 {
-    width: 25%;
+    width: 23%;
   }
-  .col-md-4 {
-    width: 33.33%;
+  .col-md-4, .articles-medium, .articles-small {
+    width: 31%;
   }
   .col-md-5 {
     width: 41.66%;
   }
-  .col-md-6, .articles-medium, .articles-small {
-    width: 49.5%;
+  .col-md-6, .articles-large {
+    width: 48%;
   }
   .col-md-7 {
     width: 58.33%;
@@ -80,9 +88,17 @@
   .col-md-11 {
     width: 91.66%;
   }
-  .col-md-12, .articles-large {
+  .col-md-12 {
     width: 100%;
   }
+    
+.openHamburger {
+    display: none;
+    }
+    
+.closeHamburger {
+    display: none;
+    }
 }
 
   /********** Small devices only **********/
@@ -94,10 +110,10 @@
     width: 16.66%;
   }
   .col-sm-3 {
-    width: 25%;
+    width: 23%;
   }
   .col-sm-4 {
-    width: 33.33%;
+    width: 31%;
   }
   .col-sm-5 {
     width: 41.66%;
@@ -123,4 +139,39 @@
   .col-sm-12, .articles-large, .articles-medium, .articles-small {
     width: 100%;
   }
+    
+    
+.navbar-item:first-child {
+    border-bottom: 1px outset beige;
+}
+    
+.div-meteo {
+    display: none;
+    }
+    
+.navbar-container {
+    display: none;
+    width: 100%;
+    }
+    
+.openHamburger {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height:auto;
+    display: block;
+    }
+    
+.closeHamburger {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height:auto;
+    display: none;
+    z-index: 20;
+    }
+    
+.dropdown-content {
+    width: 100%;
+}
 }

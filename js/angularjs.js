@@ -1,6 +1,17 @@
-var myApp = angular.module('myApp',[]);
+var myApp = angular.module('myApp',['ngAnimate']);
 
-myApp.controller("articlesSpace", function($scope){
+myApp
+// On ne peut avoir qu'UN seul _ng-app_ par fichier html. Il faut donc ajouter les _controller_ de cette façon :
+/*
+.controller("dropdownController", ['$scope', function($scope) {
+    $scope.showMe = false;
+    $scope.dropdownShow = function() {
+        $scope.showMe = !$scope.showMe;
+    }
+}])
+*/
+
+.controller("articlesSpace", ['$scope', function($scope){
     $scope.category = "attentat";
         
     displayNews = function(scope) {
@@ -55,4 +66,4 @@ myApp.controller("articlesSpace", function($scope){
     
     displayNews($scope);
     window.setTimeout(function(){$scope.$apply()}, 1000);
-});
+}]);
