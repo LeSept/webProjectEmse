@@ -64,6 +64,7 @@ img {
     box-shadow: 2px 2px 2px;
     border-radius: 5px;
     min-height: 200px;
+    border-left: 7px solid #193446;
 }
 
 .articles-item > p {
@@ -188,6 +189,7 @@ footer > div {
     margin-bottom: 40px;
 }
 
+
 footer img {
     border-radius: 50%;
     border: 5px solid #ddd;
@@ -195,8 +197,10 @@ footer img {
 	width: auto;
 	height: auto;
 	margin: 10px;
+    transition: max-height 1s;
 }
 
 footer img:hover {
     box-shadow: 0 0 5px 2px rgba(0, 140, 186, 0.5);
+    max-height: 300px;
 }
