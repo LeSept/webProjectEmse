@@ -5,7 +5,9 @@
 	font-size: 14px;
 	font-family: Tahoma, Geneva, sans-serif;
 }
-
+table{
+	background:transparent;
+}
 body {
     background-color: beige;
     background-image: url("../images/seven.png");
