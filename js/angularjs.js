@@ -25,7 +25,8 @@ myApp.controller("articlesSpace", function($scope){
                                 date = result.feed.entries[i].publishedDate;
                                 
                                 //on détermine le type de l'article en fonction de la date
-                                intervalle = (now.getDate()-date.substring(5,7))*86400+(now.getHours()-date.substring(17,19))*3600+(now.getMinutes()-+date.substring(20,22))*60+(now.getSeconds()-+date.substring(23,25));
+                                intervalle = (now.getFullYear()-date.substring(12,16))*86400*365+(now.getMonth()+1-getMonthFromString(date.substring(8,11)))*86400*30+(now.getDate()-date.substring(5,7))*86400+(now.getHours()-date.substring(17,19))*3600+(now.getMinutes()-date.substring(20,22))*60+(now.getSeconds()-date.substring(23,25));
+                                
                                 
                                 if(intervalle<12*3600){
                                     type = "articles-large";
