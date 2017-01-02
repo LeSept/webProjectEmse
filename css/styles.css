@@ -34,6 +34,10 @@ body {
 	 padding: 10px;
 }
 
+.navbar-item:hover {
+    background: #28120e;
+}
+
 .navbar-fixed {
     top: 0;
     z-index: 10;
@@ -65,6 +69,19 @@ img {
     border-radius: 5px;
     min-height: 200px;
     border-left: 7px solid #193446;
+}
+
+.articles-item > h2 {
+	align-self: flex-start;
+    background: #193446;
+	color: white;
+	font-size: 1.3em;
+    padding-right: 5px;
+    padding-left: 3px;
+    padding-bottom: 3px;
+    border-radius: 0px 5px 5px 0px;
+    margin-left: -12px;
+    margin-bottom: 7px;
 }
 
 .articles-item > p {
@@ -114,14 +131,14 @@ h2 {
 	align-self: flex-end;
 	color: #193446;
 	font-size: 1.3em;
-    margin-top: 10px;
+    margin-top: 7px;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: burlywood;
-    width: 25%;
+    background-color: floralwhite;
+    width: 21%;
     min-width: 140px;
     left: 0;
 }
@@ -142,7 +159,7 @@ h2 {
 	background-color: #e58b4e;
     font-size: 1.1em;
     color: #f8f3e6;
-    background: #48120e;
+    background: #28120e;
     
 }
 

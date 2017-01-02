@@ -141,8 +141,11 @@
   }
     
     
-.navbar-item:first-child {
+.navbar-item {
     border-bottom: 1px outset beige;
+}
+.navbar-item:last-child {
+    border-bottom: none;
 }
     
 .div-meteo {
