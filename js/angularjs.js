@@ -1,26 +1,30 @@
-var myApp = angular.module('myApp',['ngAnimate']);
+var myApp = angular.module('myApp',[]);
 
 myApp
-// On ne peut avoir qu'UN seul _ng-app_ par fichier html. Il faut donc ajouter les _controller_ de cette façon :
-/*
-.controller("dropdownController", ['$scope', function($scope) {
-    $scope.showMe = false;
-    $scope.dropdownShow = function() {
-        $scope.showMe = !$scope.showMe;
+
+.controller("pageController", ['$scope', function($scope) {
+    $scope.category = "À LA UNE";
+    $scope.allCategories = ["À LA UNE"];
+    $scope.actualize = function(cat){
+        alert(cat);
+        $scope.category = cat;
+        $scope.apply();
     }
 }])
-*/
+
+
 
 .controller("articlesSpace", ['$scope', function($scope){
-    $scope.category = "attentat";
+    $scope.articles = new Array();
         
     displayNews = function(scope) {
     //on parcourt les catégories des sources à disposition
-        $scope.articles = new Array();
+        scope.articles = new Array();
         var date = ""; // date de publication des articles
         var type = ""; // type de l'article our l'affichage, s'il doit être affiché petit, grand ou moyen.
         var now = new Date();
         var intervalle = 0; // nbr de secondes entre maintenant et la date de l'aricle
+        var addarticle = false;
         
         
         for(var src in sources){
@@ -49,8 +53,20 @@ myApp
                                 //construction de le date de l'article. On ne peut pas a prendre telle qu'elle est car cela pose problème pour le tri
                                 date = date.substring(12,16)+"-"+getMonthFromString(date.substring(8,11))+"-"+date.substring(5,7)+" "+date.substring(17,25);
                                 
+                                //met en majuscule + enregistrement dans scope.allCategories + ajout ou non de l'article
+                                for(var element in result.feed.entries[i].categories){
+                                    result.feed.entries[i].categories[element] = result.feed.entries[i].categories[element].toUpperCase();
+                                    scope.allCategories.includes(result.feed.entries[i].categories[element]) ? true : scope.allCategories.push(result.feed.entries[i].categories[element]);
+                                    if(!addarticle){
+                                        addarticle = result.feed.entries[i].categories[element] == scope.category || scope.category == "À LA UNE";
+                                    }
+                                }
                                 
-                                scope.articles.push({"title":result.feed.entries[i].title, "contentSnippet":result.feed.entries[i].contentSnippet, "link":result.feed.entries[i].link, "date":date, "type":type});
+                                if(addarticle){
+                                    scope.articles.push({"title":result.feed.entries[i].title, "contentSnippet":result.feed.entries[i].contentSnippet, "link":result.feed.entries[i].link, "date":date, "type":type, "categories":result.feed.entries[i].categories});
+                                }
+                                
+                                addarticle = false;
                                 
                             }
                         }

@@ -64,7 +64,6 @@ img {
 	padding: 10px;
 	display: flex;
 	flex-direction: column;
-	text-align: justify;
 	background-color: burlywood;
     box-shadow: 2px 2px 2px;
     border-radius: 5px;
@@ -88,6 +87,7 @@ img {
 
 .articles-item > p {
 	color: #193446;
+    text-align: justify;
 }
 
 .articles-link{
@@ -95,6 +95,15 @@ img {
     text-align: center;
     text-decoration: none;
     padding: 10px;
+}
+
+.articles-categories{
+    display: inline-block;
+    background-color: #193446;
+    color: white;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 3px;
 }
 
 img {
