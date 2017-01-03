@@ -32,6 +32,7 @@ body {
 	 text-align: center;
 	 background: #48120e;
 	 padding: 10px;
+    cursor:default;
 }
 
 .navbar-item:hover {
@@ -221,3 +222,61 @@ footer img:hover {
     box-shadow: 0 0 5px 2px rgba(0, 140, 186, 0.5);
     max-height: 300px;
 }
+
+
+/* Horoscope table*/
+#horoscope-container {
+    display: none;
+    z-index: 30;
+}
+
+.horoscope {
+    background: white;
+    border: 3px solid #3F3F3F;
+    margin: auto;
+    width: 80%;
+    display: flex; 
+  	flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 10px;
+    box-shadow: 0 0 5px 2px rgba(0, 140, 186, 0.5);
+}
+
+.horoscope > p {
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    font-family: arial, helvetica, sans-serif;
+    color: white;
+    background: #3F3F3F;
+    cursor:default;
+}
+
+.horoscope-item {
+	display: flex;
+	flex-direction: row;
+    align-items: center;
+}
+
+.horoscope-image {
+    width: auto;
+}
+
+.horoscope-info {
+    width: auto;
+    align-content: center;
+}
+
+.horoscope-info p a {
+    color: blue;
+}
+
+.horoscope .horoscope-info p {
+    font-family: arial, helvetica, sans-serif;
+    font-style: italic;
+    color : "#3F3F3F";
+    font-size: 0.85em;
+}
+/* end Horoscope table*/
+
+

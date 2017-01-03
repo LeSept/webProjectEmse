@@ -28,10 +28,23 @@ $(document).ready(function(){
 });
     
 //Slide up the navbar with the hamburger menu
-$(document).ready(function(){    
+$(document).ready(function(){
     $(".closeHamburger").click(function(){
         $('#navbar-container').slideUp("slow");
         $(".closeHamburger").hide();
         $(".openHamburger").show();
     });
 });
+
+//Display the horoscope
+$(document).ready(function(){
+    $("#navbar-meteo").click(function(){
+        $('#horoscope-container').slideToggle("slow");
+        setTimeout(closeHoroscope, 1*60*1000)
+    });
+});
+
+function closeHoroscope() {
+    $('#horoscope-container').hide("slow");
+}
+
