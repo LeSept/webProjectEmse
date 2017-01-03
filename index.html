@@ -41,11 +41,7 @@
       <nav>
         <div id="navbar-container" class="navbar-container">
           <div id="navbar-login" class="col-lg-3 col-md-3 col-sm-12 navbar-item">
-          	<p>Preferences</p>
-              
-            <!-- The preferences code goes here -->
-            <div ng-include="'preferences.html'"></div>
-              
+          	<p>Preferences</p>              
           </div>
         
           <div id="navbar-meteo" class="col-lg-3 col-md-6 col-sm-12 navbar-item">
@@ -69,6 +65,9 @@
     
       <!-- The horoscope code goes here -->
     <div id="horoscope-container" ng-include="'horoscope.html'"></div>
+      
+      <!-- The preferences code goes here -->
+    <div id="preferences-container" ng-include="'preferences.html'"></div>
       
       <div id="articles-container" class="articles-container" ng-controller="articlesSpace">
           
