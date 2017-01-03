@@ -72,7 +72,7 @@ img {
     border-left: 7px solid #193446;
 }
 
-.articles-item > h2 {
+.articles-title {
 	align-self: flex-start;
     background: #193446;
 	color: white;
@@ -83,6 +83,7 @@ img {
     border-radius: 0px 5px 5px 0px;
     margin-left: -12px;
     margin-bottom: 7px;
+    text-align: left;
 }
 
 .articles-item > p {

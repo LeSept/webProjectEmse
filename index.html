@@ -75,7 +75,7 @@
           <div class="articles-item {{article.type}}" ng-repeat="article in articles|orderBy: '-date'|filter: {title : category} as results">
               <p class="articles-date">{{article.date}}</p>
               <p class="articles-media">{{article.media}}</p>
-              <h2>{{article.title}}</h2>
+              <h2 class="articles-title">{{article.title}}</h2>
               <p class="articles-content">{{article.contentSnippet}}</p>
               <a class="articles-link col-sm-4" href={{article.link}}>Lire l'article sur le web</a>              
               <p class="articles-categories">{{article.categories}}</p>
@@ -86,22 +86,22 @@
       <footer>
           <p>Made with love by Aymeric, Chen, Fidèle and Leticia</p>
           <div>
-              <img src="/images/aymeric.jpg" alt="Aymeric">
+              <img src="./images/aymeric.jpg" alt="Aymeric">
               <p>Aymeric</p>
           </div>
           
           <div>
-              <img src="/images/chen.jpg" alt="Chen">
+              <img src="./images/chen.jpg" alt="Chen">
               <p>Chen</p>
           </div>
           
           <div>
-              <img src="/images/fidele.jpg" alt="Fidèle">
+              <img src="./images/fidele.jpg" alt="Fidèle">
               <p>Fidèle</p>
           </div>
           
           <div>
-              <img src="/images/leticia.jpg" alt="Leticia">
+              <img src="./images/leticia.jpg" alt="Leticia">
               <p>Leticia</p>
           </div>
      </footer>
