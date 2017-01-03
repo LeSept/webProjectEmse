@@ -1,0 +1,19 @@
+<div class="preferences">
+<div ng-cloak ng-controller="preferenceController" class="w3-card-2">
+  <header class="w3-container w3-light-grey w3-padding-16">
+    <h2>My preferences</h2>
+  </header>
+  <ul class="w3-ul">
+      <li ng-repeat="preference in preferences" class="w3-padding-16">
+          {{preference}}
+          <span style="cursor:pointer;" class="w3-right w3-margin-right">
+          <input type="checkbox" checklist-model="user.preferences" checklist-value="preference">
+          </span>
+      </li>
+  </ul>
+    <p>
+    {{user.preferences}}
+    </p>
+</div>
+</div>
+

@@ -130,7 +130,6 @@ h2 {
 }
 
 .dropdown-content {
-	align-self: flex-end;
 	color: #193446;
 	font-size: 1.3em;
     margin-top: 7px;
@@ -139,6 +138,7 @@ h2 {
 .dropdown-content {
     display: none;
     position: absolute;
+    right: 10px;
     background-color: floralwhite;
     width: 21%;
     min-width: 140px;
@@ -178,11 +178,10 @@ h2 {
 }
 
 footer {
+    display: flex;
+    flex-direction: row;
     width: 100%;
     min-height: 300px;
-    display: flex; 
-    flex-wrap: wrap;
-    flex-direction: row;
     justify-content: space-around;
     text-align: center;
     background: #48120e; 
@@ -197,7 +196,6 @@ footer p {
 }
 
 footer > div > p {
-    width: 100%;
     font-size: 1.3em;
     text-align: center;
     padding: 0px;
@@ -279,5 +277,20 @@ footer img:hover {
     font-size: 0.85em;
 }
 /* end Horoscope table*/
+
+
+#preferences-container {
+    display: none;
+    z-index: 40;
+}
+
+.preferences {
+    background: white;
+    border: 3px solid #3F3F3F;
+    margin: auto;
+    width: 80%;
+    margin-top: 10px;
+    box-shadow: 0 0 5px 2px rgba(0, 140, 186, 0.5);
+}
 
 

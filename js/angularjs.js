@@ -1,15 +1,35 @@
-var myApp = angular.module('myApp',['ngAnimate']);
+
+var myApp = angular.module('myApp', ['ngAnimate', 'checklist-model']);
 
 myApp
 // On ne peut avoir qu'UN seul _ng-app_ par fichier html. Il faut donc ajouter les _controller_ de cette façon :
-/*
-.controller("dropdownController", ['$scope', function($scope) {
-    $scope.showMe = false;
-    $scope.dropdownShow = function() {
-        $scope.showMe = !$scope.showMe;
-    }
+
+.controller("preferenceController", ['$scope', function($scope) {
+    $scope.preferences = [
+        "Une", 
+        "Attentat", 
+        "Europe", 
+        "Monde", 
+        "Afrique"
+    ];
+    $scope.user = {
+    preferences: ["Une"]
+    };
+    
+    $scope.checkAll = function() {
+        $scope.user.preferences = angular.copy($scope.preferences);
+    };
+    
+    $scope.uncheckAll = function() {
+        $scope.user.preferences = [];
+    };
+    
+    $scope.checkFirst = function() {
+        $scope.user.preferences.splice(0, $scope.user.preferences.length);
+        $scope.user.preferences.push("Une");
+    };   
 }])
-*/
+
 
 .controller("articlesSpace", ['$scope', function($scope){
     $scope.category = "attentat";
