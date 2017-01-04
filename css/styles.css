@@ -5,9 +5,7 @@
 	font-size: 14px;
 	font-family: Tahoma, Geneva, sans-serif;
 }
-table{
-	background:transparent;
-}
+
 body {
     background-color: beige;
     background-image: url("../images/seven.png");
@@ -46,13 +44,6 @@ body {
     width: 100%;
 }
 
-img {
-	max-height: 50px;
-	min-width: 30px;
-	width: auto;
-	height: auto;
-	margin: 10px;
-}
 
 .navbar-item > p {
 	 font-size: 1.3em;
@@ -95,14 +86,6 @@ img {
     text-align: center;
     text-decoration: none;
     padding: 10px;
-}
-
-img {
-	max-height: 50px;
-	min-width: 30px;
-	width: auto;
-	height: auto;
-	margin: 10px;
 }
 
 .articles-container {
@@ -179,6 +162,16 @@ h2 {
 
 footer {
     display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 300px;
+    justify-content: space-around;
+    text-align: center;
+    background: #48120e; 
+}
+
+.footer-div {
+    display: flex;
     flex-direction: row;
     width: 100%;
     min-height: 300px;
@@ -187,7 +180,12 @@ footer {
     background: #48120e; 
 }
 
-footer p {
+footer > div > div{
+    margin-bottom: 40px;
+}
+
+
+footer > p {
     width: 100%;
     font-size: 2em;
     text-align: center;
@@ -195,17 +193,13 @@ footer p {
     color : beige;
 }
 
-footer > div > p {
+footer > div > div p {
+    width: auto;
     font-size: 1.3em;
     text-align: center;
     padding: 0px;
     color : white;
 }
-
-footer > div {
-    margin-bottom: 40px;
-}
-
 
 footer img {
     border-radius: 50%;

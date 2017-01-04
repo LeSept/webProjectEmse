@@ -21,7 +21,7 @@ $(document).ready(function() {
 
 //Slide down the dropdown-content
 $(document).ready(function(){
-    $("#navbar-category").hover(function(){
+    $("#navbar-category").click(function(){
         $(".dropdown-content").slideToggle("slow");
     });
 });
