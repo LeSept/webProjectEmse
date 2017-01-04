@@ -6,10 +6,10 @@ myApp
     $scope.category = "À LA UNE";
     $scope.allCategories = ["À LA UNE"];
     $scope.actualize = function(cat){
-        alert(cat);
         $scope.category = cat;
-        $scope.apply();
     }
+    
+    
 }])
 
 
@@ -24,7 +24,6 @@ myApp
         var type = ""; // type de l'article our l'affichage, s'il doit être affiché petit, grand ou moyen.
         var now = new Date();
         var intervalle = 0; // nbr de secondes entre maintenant et la date de l'aricle
-        var addarticle = false;
         
         
         for(var src in sources){
@@ -57,19 +56,14 @@ myApp
                                 for(var element in result.feed.entries[i].categories){
                                     result.feed.entries[i].categories[element] = result.feed.entries[i].categories[element].toUpperCase();
                                     scope.allCategories.includes(result.feed.entries[i].categories[element]) ? true : scope.allCategories.push(result.feed.entries[i].categories[element]);
-                                    if(!addarticle){
-                                        addarticle = result.feed.entries[i].categories[element] == scope.category || scope.category == "À LA UNE";
-                                    }
+                                    
                                 }
                                 
-                                if(addarticle){
-                                    scope.articles.push({"title":result.feed.entries[i].title, "contentSnippet":result.feed.entries[i].contentSnippet, "link":result.feed.entries[i].link, "date":date, "type":type, "categories":result.feed.entries[i].categories});
-                                }
-                                
-                                addarticle = false;
-                                
+                                scope.articles.push({"title":result.feed.entries[i].title, "contentSnippet":result.feed.entries[i].contentSnippet, "link":result.feed.entries[i].link, "date":date, "type":type, "categories":result.feed.entries[i].categories});
                             }
                         }
+                        scope.allCategories.sort();
+                        $scope.$apply();
                     });
                 }
             }
@@ -79,7 +73,9 @@ myApp
     function getMonthFromString(mon){
        return new Date(Date.parse(mon +" 1, 2016")).getMonth()+1;
     }
-    
+
     displayNews($scope);
-    window.setTimeout(function(){$scope.$apply()}, 1000);
+    // on actualise les articles régulièrement
+    //window.setInterval(function(){displayNews($scope)}, 10000);
+    
 }]);
