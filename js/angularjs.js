@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 var myApp = angular.module('myApp', ['ngAnimate', 'checklist-model']);
 
 myApp
