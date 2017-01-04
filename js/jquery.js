@@ -4,17 +4,11 @@ $(document).ready(function() {
   $(window).scroll(function () {
     if ($(window).scrollTop() > 210) {
       $('#navbar-container').addClass('navbar-fixed');
-        /*
-      $('#navbar-login').hide();
       $('#navbar-meteo').hide();
-      */
     }
     if ($(window).scrollTop() < 211) {
       $('#navbar-container').removeClass('navbar-fixed');
-        /*
-      $('#navbar-login').show();
       $('#navbar-meteo').show();
-      */
     }
   });
 });
@@ -48,18 +42,6 @@ $(document).ready(function(){
 $(document).ready(function(){
     $("#navbar-meteo").click(function(){
         $('#horoscope-container').slideToggle("slow");
-        setTimeout(closeHoroscope, 1*60*1000)
-    });
-});
-
-function closeHoroscope() {
-    $('#horoscope-container').hide("slow");
-}
-
-//Display the preferences
-$(document).ready(function(){
-    $("#navbar-login").click(function(){
-        $('#preferences-container').slideToggle("slow");
     });
 });
 

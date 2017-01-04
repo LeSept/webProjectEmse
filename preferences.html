@@ -1,32 +1,46 @@
-<div class="preferences">
-<div ng-cloak ng-controller="preferenceController" class="w3-card-2">
-  <header class="w3-container w3-light-grey w3-padding-16">
-    <h2>My preferences</h2>
-  </header>
-  <ul class="w3-ul">
-      <li ng-repeat="preference in preferences" class="w3-padding-16">
-          {{preference}}
-          <span style="cursor:pointer;" class="w3-right w3-margin-right">
-          <input type="checkbox" checklist-model="user.preferences" checklist-value="preference">
-          </span>
-      </li>
-  </ul>
-    <p>
-        <!-- A enlever : juste pour vérification -->
-        <strong>
-            Liste des préférences : {{user.preferences}}
-        </strong>
-    </p>
-    <script>
-        // Update cookies
-    $(".w3-ul").click(function() {
-        var newCoookies = {{user.preferences}}.slice();
-        setCookie("userCookies", JSON.stringify(newCoookies), 365);
-        user["userCookies"] = JSON.parse(getCookie("userCookies"));
-        alert("Hello");
-    });
 
-    </script>
-</div>
+<!-- Modal -->
+<div id="mypreferenceModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content" style="background: beige">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+          <!-- Begin body -->
+          <div ng-cloak ng-controller="preferenceController" class="w3-card-2">
+              <header class="w3-container w3-light-grey w3-padding-16">
+                  <h2>My preferences</h2>
+              </header>
+              <ul class="w3-ul">
+                  <li ng-repeat="preference in preferences" class="w3-padding-16">
+                      <strong style="font-size:2em">{{preference}}</strong>
+                      <span style="cursor:pointer;" class="w3-right w3-margin-right">
+                          <input type="checkbox" checklist-model="user.preferences" checklist-value="preference">
+                      </span>
+                  </li>
+              </ul>
+              <p>
+                  <!-- A enlever : juste pour vérification -->
+                  <strong>Liste des préférences : {{user.preferences}}</strong>
+              </p>
+              <script>
+                  // Update cookies
+                  $(".w3-ul").click(function() {
+                      var newCoookies = {{user.preferences}}.slice();
+                      setCookie("userCookies", JSON.stringify(newCoookies), 365);
+                  user["userCookies"] = JSON.parse(getCookie("userCookies"));
+                  alert("Hello");
+                  });
+              </script>
+          </div> <!-- End body -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
 

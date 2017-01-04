@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>LeSept</title>
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
       <!-- A CSS style from w3School -->
     <link rel="stylesheet" href="css/w3.css">
 	<link rel="stylesheet" href="css/styles.css">
@@ -54,7 +55,7 @@
       <nav>
         <div id="navbar-container" class="navbar-container">
           <div id="navbar-login" class="col-lg-3 col-md-3 col-sm-12 navbar-item">
-          	<p>Preferences</p>              
+          	<p data-toggle="modal" data-target="#mypreferenceModal">Preferences</p>              
           </div>
         
           <div id="navbar-meteo" class="col-lg-3 col-md-6 col-sm-12 navbar-item">
@@ -80,7 +81,7 @@
     <div id="horoscope-container" ng-include="'horoscope.html'"></div>
       
       <!-- The preferences code goes here -->
-    <div id="preferences-container" ng-include="'preferences.html'"></div>
+    <div ng-include="'preferences.html'"></div>
       
       <div id="articles-container" class="articles-container" ng-controller="articlesSpace">
           
@@ -135,5 +136,6 @@
         google.load("feeds", "1");
     </script>
     <script type="text/javascript" src="js/angularjs.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
     
 </html>

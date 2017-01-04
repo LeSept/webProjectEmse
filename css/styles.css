@@ -82,6 +82,7 @@ body {
 }
 
 .articles-link{
+    width: auto;
     margin: 20px;
     text-align: center;
     text-decoration: none;
@@ -229,6 +230,7 @@ footer img:hover {
     border: 3px solid #3F3F3F;
     margin: auto;
     width: 80%;
+    min-height: 200px;
     display: flex; 
   	flex-wrap: wrap;
     flex-direction: row;
@@ -273,19 +275,8 @@ footer img:hover {
 }
 /* end Horoscope table*/
 
-
-#preferences-container {
-    display: none;
-    z-index: 40;
-}
-
-.preferences {
-    background: white;
-    border: 3px solid #3F3F3F;
-    margin: auto;
-    width: 80%;
-    margin-top: 10px;
-    box-shadow: 0 0 5px 2px rgba(0, 140, 186, 0.5);
-}
-
+.w3-card-2 {
+    background: #293446;
+    color: white;
+} 
 
