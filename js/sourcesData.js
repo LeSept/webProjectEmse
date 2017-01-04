@@ -1,4 +1,22 @@
 var sources = {
+    /*get all categories excepted "une" */
+    "getCategories": function(){
+        var results = new Array();
+        var categories = new Array();
+        
+        for(var src in this){
+            if(src != "getCategories" && src != "sites"){
+                
+                categories = Object.keys(this[src]);
+                for(var cat in categories){
+                    results.includes(categories[cat]) || categories[cat] == "une" ? true : results.push(categories[cat]);
+                }
+            }
+        }
+        
+        return results.sort();
+    },
+    
     /* sites is used for research by keywords */
     "sites": {
         "lemonde": "lemonde.fr",
@@ -23,9 +41,9 @@ var sources = {
         "une":"http://feeds.feedburner.com/topito"
     },
     
-    /*"lefigaro": {
+    "lefigaro": {
         "une":"http://www.lefigaro.fr/rss/figaro_actualites-a-la-une.xml",
         "politique":"http://www.lefigaro.fr/rss/figaro_politique.xml"
-    }*/
+    }
     
 }

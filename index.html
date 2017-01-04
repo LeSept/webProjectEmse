@@ -33,7 +33,9 @@
     
     
   
-  <body onload="loadCookie()" ng-app="myApp" ng-strict-di>
+
+  <body onload="loadCookie()" ng-app="myApp" ng-strict-di ng-controller="pageController">
+
     <header>
         <!-- Meteo -->
       <div class="div-meteo">
@@ -65,12 +67,7 @@
           <div id="navbar-category" class="col-lg-3 col-md-3 col-sm-12 navbar-item">
           	<p>Categories</p>
           	<div class="dropdown-content">
-    			<a href="#">Category 1</a>
-    			<a href="#">Category 2</a>
-   				<a href="#">Category 3</a>
-   				<a href="#">Category 4</a>
-    			<a href="#">Category 5</a>
-   				<a href="#">Category 6</a>
+                <a ng-repeat="cat in allCategories" ng-click="actualize(cat)">{{cat}}</a>
   			</div>
           </div>	
         </div>
@@ -86,13 +83,25 @@
       <div id="articles-container" class="articles-container" ng-controller="articlesSpace">
           
           <h1 class="col-lg-12 col-sm-12 col-md-12" ng-bind="category">{{category}}</h1>
-          <div class="articles-item {{article.type}}" ng-repeat="article in articles|orderBy: '-date'|filter: {title : category} as results">
+          
+          <!-- si category = A LA UNE, car on ne filtre pas -->
+          <div class="articles-item {{article.type}}" ng-repeat="article in articles|orderBy: '-date' as results" ng-if="category=='À LA UNE'">
               <p class="articles-date">{{article.date}}</p>
               <p class="articles-media">{{article.media}}</p>
               <h2 class="articles-title">{{article.title}}</h2>
               <p class="articles-content">{{article.contentSnippet}}</p>
               <a class="articles-link col-sm-4" href={{article.link}}>Lire l'article sur le web</a>              
-              <p class="articles-categories">{{article.categories}}</p>
+              <div class="articles-categories" ng-repeat="subject in article.categories">{{subject}}</div>
+          </div>
+          
+          <!-- si category != A LA UNE, car on filtre -->
+          <div class="articles-item articles-large" ng-repeat="article in articles|filter: {categories: category}|orderBy: '-date' as results" ng-if="category!='À LA UNE'">
+              <p class="articles-date">{{article.date}}</p>
+              <p class="articles-media">{{article.media}}</p>
+              <h2 class="articles-title">{{article.title}}</h2>
+              <p class="articles-content">{{article.contentSnippet}}</p>
+              <a class="articles-link col-sm-4" href={{article.link}}>Lire l'article sur le web</a>              
+              <div class="articles-categories" ng-repeat="subject in article.categories">{{subject}}</div>
           </div>
       </div>
       
