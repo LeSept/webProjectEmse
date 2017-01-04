@@ -12,12 +12,20 @@
       </li>
   </ul>
     <p>
-    {{user.preferences}}
+        <!-- A enlever : juste pour vérification -->
+        <strong>
+            Liste des préférences : {{user.preferences}}
+        </strong>
     </p>
     <script>
-        var newCoookies = {{user.preferences}};
+        // Update cookies
+    $(".w3-ul").click(function() {
+        var newCoookies = {{user.preferences}}.slice();
         setCookie("userCookies", JSON.stringify(newCoookies), 365);
         user["userCookies"] = JSON.parse(getCookie("userCookies"));
+        alert("Hello");
+    });
+
     </script>
 </div>
 </div>
