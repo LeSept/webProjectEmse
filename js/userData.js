@@ -10,5 +10,7 @@ var user = {
         displayNews(sources.france24.monde);
         displayNews(sources.topito);
         displayNews(sources.lemonde.une);
-    }
+    },
+    // Les cookies de l'utilisateur sont stockés ici
+    "userCookies": []
 };

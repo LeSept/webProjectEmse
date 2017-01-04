@@ -5,16 +5,22 @@ myApp
 // On ne peut avoir qu'UN seul _ng-app_ par fichier html. Il faut donc ajouter les _controller_ de cette façon :
 
 .controller("preferenceController", ['$scope', function($scope) {
+    // Toutes les préférences possibles
     $scope.preferences = [
-        "Une", 
-        "Attentat", 
-        "Europe", 
-        "Monde", 
-        "Afrique"
+        "une", 
+        "attentat", 
+        "europe", 
+        "monde", 
+        "afrique"
     ];
+    // Les préférences de l'utilisateur ; on y met la une par défaut
     $scope.user = {
-    preferences: ["Une"]
+    preferences: ["une"]
     };
+    // On remplit les préférences de l'utilisateur avec ce qu'on a dans les cookies
+    for (var i=0; i<user["userCookies"].length; i++) {
+        $scope.user.preferences.push(user["userCookies"][i]);
+    }
     
     $scope.checkAll = function() {
         $scope.user.preferences = angular.copy($scope.preferences);
@@ -26,7 +32,7 @@ myApp
     
     $scope.checkFirst = function() {
         $scope.user.preferences.splice(0, $scope.user.preferences.length);
-        $scope.user.preferences.push("Une");
+        $scope.user.preferences.push("une");
     };   
 }])
 

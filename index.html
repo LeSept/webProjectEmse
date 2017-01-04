@@ -17,14 +17,14 @@
     <script src="//code.angularjs.org/snapshot/angular.min.js"></script>
     <script src="//code.angularjs.org/snapshot/angular-sanitize.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
-    <script src="checklist-model.js"></script>
+    <script src="js/checklist-model.js"></script>
       
     <!-- Google Feed Api -->
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
       
   </head>
   
-  <body ng-app="myApp" ng-strict-di>
+  <body onload="loadCookie()" ng-app="myApp" ng-strict-di>
     <header>
       <div class="div-meteo">
             <iframe id="forecast_embed" type="text/html" frameborder="0" height="210" width="50%" src="http://forecast.io/embed/#lat=45.441224&lon=4.385991&name=Saint-etienne&color=#00aaff&font=Georgia&units=uk">
@@ -114,6 +114,7 @@
     
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/sourcesData.js"></script>
+    <script type="text/javascript" src="js/userData.js"></script>
     <script type="text/javascript">
         google.load("feeds", "1");
     </script>

@@ -14,6 +14,11 @@
     <p>
     {{user.preferences}}
     </p>
+    <script>
+        var newCoookies = {{user.preferences}};
+        setCookie("userCookies", JSON.stringify(newCoookies), 365);
+        user["userCookies"] = JSON.parse(getCookie("userCookies"));
+    </script>
 </div>
 </div>
 
