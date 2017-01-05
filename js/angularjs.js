@@ -58,7 +58,10 @@ myApp
         document.getElementById('results-container').innerHTML = '';
         for(var site in sources.sites){
             var query = 'site:'+sources.sites[site]+ ' '+keyword;
-            google.feeds.findFeeds(query, findDone);
+            //google.feeds.findFeeds(query, findDone);
+            window.setTimeout(function() {
+                google.feeds.findFeeds(query, findDone)
+            }, 2000);
         }
 
     }
