@@ -13,11 +13,41 @@ body {
     background-repeat: no-repeat;
     background-origin: content-box;
     background-attachment: fixed;
-    background-size: 1400px;
+    background-size: 1200px;
+}
+
+.welcome {
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 470px;
+    background-color: #193446;
+    padding: 20px;
+}
+
+.welcome img {
+	width: auto;
+	height: auto;
+	margin: 10px;
+}
+
+.welcome img:hover {
+    box-shadow: 0 0 5px 2px rgba(0, 140, 186, 0.5);
+}
+
+.welcome h1, .welcome h2 {
+    color: white;
+}
+
+.welcome h1 {
+    font-size: 3em;
+}
+.welcome h2 {
+    font-size: 2em;
 }
 
 .navbar-container {
-  width: 75%;
   display: flex; 
   flex-wrap: wrap;
   flex-direction: row-reverse;
@@ -52,13 +82,14 @@ body {
 
 .articles-item {
 	margin: 5px;
+    margin-bottom: 10px;
 	padding: 10px;
 	display: flex;
 	flex-direction: column;
 	background-color: burlywood;
     box-shadow: 2px 2px 2px;
     border-radius: 5px;
-    min-height: 200px;
+    min-height: 300px;
     border-left: 7px solid #193446;
 }
 
@@ -82,21 +113,33 @@ body {
 }
 
 .articles-link{
-    width: auto;
-    margin: 20px;
+    width: 100%;
+    margin: auto;
     text-align: center;
     text-decoration: none;
-    padding: 10px;
 }
 
+a.articles-link{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    text-decoration: none;
+}
 
 .articles-categories{
-    display: inline-block;
+    display: flex; 
+  	flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
     background-color: #193446;
     color: white;
-    padding: 5px;
-    margin: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
     border-radius: 3px;
+    text-transform: lowercase;
+    text-decoration: underline;
 }
 
 .articles-container {
@@ -124,19 +167,19 @@ h2 {
 }
 
 .dropdown-content {
+    position: absolute;
+    display: none;
 	color: #193446;
 	font-size: 1.3em;
-    margin-top: 7px;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    right: 10px;
     background-color: floralwhite;
-    width: 21%;
-    min-width: 140px;
-    left: 0;
+    width: 100%;
+    height: 500px;
+    margin-top: 7px;
+    
+    z-index: 40;
+    overflow: auto;
+    cursor: pointer;
+    right: 0px;
 }
 
 .dropdown-content a {
@@ -168,31 +211,32 @@ h2 {
     text-align: center;
     height:210;
     width: auto;
-    background-image: url("../images/nav.png");
 }
 
 
 footer {
     display: flex;
     flex-direction: column;
-    width: 100%;
     min-height: 300px;
-    justify-content: space-around;
+    justify-content: space-between;
     text-align: center;
     background: #48120e; 
 }
 
 .footer-div {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     width: 100%;
     min-height: 300px;
     justify-content: space-around;
     text-align: center;
-    background: #48120e; 
+    padding: 20px;
 }
 
 footer > div > div{
+    width: auto;
+	height: auto;
     margin-bottom: 40px;
 }
 

@@ -99,6 +99,20 @@
 .closeHamburger {
     display: none;
     }
+    
+body {
+    background-color: beige;
+    background-image: url("../images/seven.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    background-attachment: fixed;
+    background-size: 900px;
+}
+    
+.welcome h1, .welcome h2 {
+    font-size: 2em;
+}
 }
 
   /********** Small devices only **********/
@@ -177,4 +191,19 @@
 .dropdown-content {
     width: 100%;
 }
+    
+body {
+    background-color: beige;
+    background-image: url("../images/seven.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    background-attachment: fixed;
+    background-size: 600px;
+}
+
+.welcome h1, .welcome h2 {
+    font-size: 1em;
+}
+    
 }

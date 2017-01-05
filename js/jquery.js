@@ -2,11 +2,11 @@
 $(document).ready(function() {
   
   $(window).scroll(function () {
-    if ($(window).scrollTop() > 210) {
+    if ($(window).scrollTop() > 680) {
       $('#navbar-container').addClass('navbar-fixed');
       $('#navbar-meteo').hide();
     }
-    if ($(window).scrollTop() < 211) {
+    if ($(window).scrollTop() < 681) {
       $('#navbar-container').removeClass('navbar-fixed');
       $('#navbar-meteo').show();
     }
@@ -26,6 +26,9 @@ $(document).ready(function(){
         $('#navbar-container').slideDown("slow");
         $(".openHamburger").hide();
         $(".closeHamburger").show();
+        if ($(window).scrollTop() < 681) {
+            $(".welcome").hide();
+        }
     });
 });
     
@@ -35,6 +38,9 @@ $(document).ready(function(){
         $('#navbar-container').slideUp("slow");
         $(".closeHamburger").hide();
         $(".openHamburger").show();
+        if ($(window).scrollTop() < 681) {
+            $(".welcome").show();
+        }
     });
 });
 

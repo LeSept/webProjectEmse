@@ -44,6 +44,22 @@
       </div>
         <!-- End Meteo -->
         
+        <!--  Welcome -->
+        <div class="welcome">
+            <div>
+                <img src="./images/logo7.png" alt="7">
+            </div>
+            <div>
+                <h1>Welcome to the kingdom of the SEVEN! Here you can find useful information for yourself.</h1>
+            </div>
+            <div>
+                <h2>Not convinced? Sroll down please!!</h2>
+            </div>
+            
+        </div>
+        <!-- End Welcome -->
+        
+        
         <!-- Hamburger menu -->
         <div class="openHamburger">
             <img src="./images/openHamburger.png">
@@ -90,8 +106,13 @@
               <p class="articles-media">{{article.media}}</p>
               <h2 class="articles-title">{{article.title}}</h2>
               <p class="articles-content">{{article.contentSnippet}}</p>
-              <a class="articles-link col-sm-4" href={{article.link}}>Lire l'article sur le web</a>              
-              <div class="articles-categories" ng-repeat="subject in article.categories">{{subject}}</div>
+              <a class="articles-link col-sm-4" href={{article.link}}>Read the article on the web</a>
+              
+              <div class="articles-categories">
+                  <div ng-repeat="subject in article.categories">
+                      <div> {{subject}} </div>
+                  </div>
+              </div>
           </div>
           
           <!-- si category != A LA UNE, car on filtre -->
@@ -100,10 +121,15 @@
               <p class="articles-media">{{article.media}}</p>
               <h2 class="articles-title">{{article.title}}</h2>
               <p class="articles-content">{{article.contentSnippet}}</p>
-              <a class="articles-link col-sm-4" href={{article.link}}>Lire l'article sur le web</a>              
-              <div class="articles-categories" ng-repeat="subject in article.categories">{{subject}}</div>
+              <a class="articles-link col-sm-12" href={{article.link}}>Read the article on the web</a>
+              
+              <div class="articles-categories">
+                  <div ng-repeat="subject in article.categories">
+                      <div> {{subject}} </div>
+                  </div>
+              </div>
+            </div>
           </div>
-      </div>
       
       
       
