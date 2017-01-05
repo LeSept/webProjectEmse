@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>LeSept</title>
+	<title>TheSeven</title>
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
       <!-- A CSS style from w3School -->
@@ -53,7 +53,7 @@
                 <h1>Welcome to the kingdom of the SEVEN! Here you can find useful information for yourself.</h1>
             </div>
             <div>
-                <h2>Not convinced? Sroll down please!!</h2>
+                <h2>Not convinced? Scroll down please!!</h2>
             </div>
             
         </div>
@@ -98,8 +98,7 @@
       
       <div class="articles-search" ng-if = "category == 'SEARCH A TOPIC'">
           <h1 class="col-lg-12 col-sm-12 col-md-12">SEARCH A TOPIC</h1>
-          <input type="text" ng-model="searcharticles" ng-model-options="{ getterSetter: true }" />
-
+          <input type="text" ng-model="searcharticles" ng-model-options="{ getterSetter: true }" size="42"/>
           <h1 class="col-lg-12 col-sm-12 col-md-12" ng-bind="searcharticles()"></h1>
       </div>
       
@@ -120,7 +119,9 @@
               
               <div class="articles-categories">
                   <div ng-repeat="subject in article.categories">
-                      <div> {{subject}} </div>
+                      <div class="article-categorie">
+                          <p> {{subject}} </p>
+                      </div>
                   </div>
               </div>
           </div>
@@ -135,7 +136,9 @@
               
               <div class="articles-categories">
                   <div ng-repeat="subject in article.categories">
-                      <div> {{subject}} </div>
+                      <div class="article-categorie">
+                          <p> {{subject}} </p>
+                      </div>
                   </div>
               </div>
             </div>

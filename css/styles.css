@@ -32,10 +32,6 @@ body {
 	margin: 10px;
 }
 
-.welcome img:hover {
-    box-shadow: 0 0 5px 2px rgba(0, 140, 186, 0.5);
-}
-
 .welcome h1, .welcome h2 {
     color: white;
 }
@@ -127,19 +123,20 @@ a.articles-link{
 }
 
 .articles-categories{
-    display: flex; 
-  	flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    align-content: space-around;
+    align-content: space-between;
+}
+.article-categorie{
     background-color: #193446;
     color: white;
     padding-left: 5px;
     padding-right: 5px;
-    border-radius: 3px;
-    text-transform: lowercase;
-    text-decoration: underline;
+    border-radius: 5px;
+    margin-bottom: 5px;
 }
 
 .articles-container {
@@ -333,4 +330,24 @@ footer img:hover {
     background: #293446;
     color: white;
 } 
+
+input {
+    text-align: center;
+    height: 50px;
+    border: solid #293446;
+    border-radius: 10px;
+    font-size: 1.5em;
+    color: #48120e;
+    color: cadetblue;
+    text-transform: capitalize;
+}
+
+.articles-search {
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between;
+    padding: 0px;
+}
 
