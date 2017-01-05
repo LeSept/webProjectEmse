@@ -55,7 +55,7 @@ myApp
     
     function searchKeyword(keyword) {
       // Query for president feeds on cnn.com
-        document.getElementById('articles-container').innerHTML = '';
+        document.getElementById('results-container').innerHTML = '';
         for(var site in sources.sites){
             var query = 'site:'+sources.sites[site]+ ' '+keyword;
             google.feeds.findFeeds(query, findDone);
@@ -68,7 +68,7 @@ myApp
       if (!result.error) {
         // Get content div
 
-        var container = document.getElementById('articles-container');
+        var container = document.getElementById('results-container');
           var html = '';
 
         // Loop through the results and print out the title of the feed and link to
