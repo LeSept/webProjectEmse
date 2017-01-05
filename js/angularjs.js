@@ -38,9 +38,48 @@ myApp
 
 .controller("pageController", ['$scope', function($scope) {
     $scope.category = "À LA UNE";
-    $scope.allCategories = ["À LA UNE"];
+    $scope.allCategories = ["SEARCH A TOPIC", "À LA UNE"];
     $scope.actualize = function(cat){
         $scope.category = cat;
+    }
+    var _searcharticles = "";
+    $scope.searcharticles = function(keyword){
+        
+        if(arguments.length){
+            searchKeyword(keyword);
+            return (_searcharticles = keyword);
+        }else{
+            return _searcharticles;
+        }
+    }
+    
+    function searchKeyword(keyword) {
+      // Query for president feeds on cnn.com
+        document.getElementById('articles-container').innerHTML = '';
+        for(var site in sources.sites){
+            var query = 'site:'+sources.sites[site]+ ' '+keyword;
+            google.feeds.findFeeds(query, findDone);
+        }
+
+    }
+
+    function findDone(result) {
+      // Make sure we didn't get an error.
+      if (!result.error) {
+        // Get content div
+
+        var container = document.getElementById('articles-container');
+          var html = '';
+
+        // Loop through the results and print out the title of the feed and link to
+        // the url.
+        for (var i = 0; i < result.entries.length; i++) {
+          var entry = result.entries[i];
+          html += '<div class = "articles-item articles-medium"><h2 class = "articles-title">' + entry.title + '</h2><p class = "summaryContent">'+ entry.contentSnippet+'</p><a href="'+entry.link+'" class = "articles-link">Lire l\'article sur le web</a> </div>';
+
+        }
+        container.innerHTML += html;
+      }
     }
     
     
@@ -49,6 +88,8 @@ myApp
 
 .controller("articlesSpace", ['$scope', function($scope){
     $scope.articles = new Array();
+    
+    
         
     displayNews = function(scope) {
     //on parcourt les catégories des sources à disposition
@@ -63,7 +104,7 @@ myApp
             if(src != "sites"){
                 for(var url in sources[src]){
                     var feed = new google.feeds.Feed(sources[src][url]);
-                    feed.load(function(result) {
+                    feed.load(function(result, src) {
                         if (!result.error) {
                             for (var i = 0; i < result.feed.entries.length; i++) {
                                 
@@ -86,16 +127,17 @@ myApp
                                 date = date.substring(12,16)+"-"+getMonthFromString(date.substring(8,11))+"-"+date.substring(5,7)+" "+date.substring(17,25);
                                 
                                 //met en majuscule + enregistrement dans scope.allCategories + ajout ou non de l'article
+                                //alert(src);
                                 for(var element in result.feed.entries[i].categories){
                                     result.feed.entries[i].categories[element] = result.feed.entries[i].categories[element].toUpperCase();
                                     scope.allCategories.includes(result.feed.entries[i].categories[element]) ? true : scope.allCategories.push(result.feed.entries[i].categories[element]);
-                                    
                                 }
+                                
                                 
                                 scope.articles.push({"title":result.feed.entries[i].title, "contentSnippet":result.feed.entries[i].contentSnippet, "link":result.feed.entries[i].link, "date":date, "type":type, "categories":result.feed.entries[i].categories});
                             }
                         }
-                        scope.allCategories.sort();
+                        //scope.allCategories.sort();
                         $scope.$apply();
                     });
                 }

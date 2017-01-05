@@ -19,16 +19,18 @@ var sources = {
     
     /* sites is used for research by keywords */
     "sites": {
-        "lemonde": "lemonde.fr",
+        "bbc": "bbc.co.uk",
         "france24": "france24.com",
         "afp": "afp.com",
         "topito": "topito.com"
     },
     
     /* list of RSS grouped by source */
-    "lemonde": {
-        "une": "http://www.lemonde.fr/rss/une.xml",
-        "videos" : "http://www.lemonde.fr/videos/rss_full.xml"
+    "bbc": {
+        "business": "http://feeds.bbci.co.uk/news/business/rss.xml",
+        "world" : "http://feeds.bbci.co.uk/news/world/rss.xml",
+        "uk": "http://feeds.bbci.co.uk/news/uk/rss.xml",
+        "politics": "http://feeds.bbci.co.uk/news/politics/rss.xml"
     },
     
     "france24": {
