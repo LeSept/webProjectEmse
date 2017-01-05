@@ -6,11 +6,7 @@ myApp
 .controller("preferenceController", ['$scope', function($scope) {
     // Toutes les préférences possibles
     $scope.preferences = [
-        "une", 
-        "attentat", 
-        "europe", 
-        "monde", 
-        "afrique"
+        "coming soon..."
     ];
     // Les préférences de l'utilisateur ; on y met la une par défaut
     $scope.user = {

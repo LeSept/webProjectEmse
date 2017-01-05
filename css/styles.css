@@ -331,7 +331,8 @@ footer img:hover {
     color: white;
 } 
 
-input {
+.articles-search input {
+    width: 75%;
     text-align: center;
     height: 50px;
     border: solid #293446;
