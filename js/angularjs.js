@@ -101,16 +101,18 @@ myApp
         alert(0);
         
         for(var src in sources){
+            alert(1);
             if(src != "sites"){
+                alert(2);
                 for(var url in sources[src]){
                     // API changé
-                    alert(1);
+                    alert(3);
                     feednami.loadGoogleFormat(sources[src][url],
                     function(result, src) {
                         if (!result.error) {
                             for (var i = 0; i < result.feed.entries.length; i++) {
                                 
-                                alert(2);
+                                alert(4);
                                 date = result.feed.entries[i].publishedDate;
                                 
                                 //on détermine le type de l'article en fonction de la date
