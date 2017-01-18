@@ -98,7 +98,7 @@ myApp
         var now = new Date();
         var intervalle = 0; // nbr de secondes entre maintenant et la date de l'aricle
         var month = ""; // pour ecrire 01 au lieu de 1
-        
+        alert(0);
         
         for(var src in sources){
             if(src != "sites"){
