@@ -102,7 +102,7 @@ myApp
         
         for(var src in sources){
             alert(1);
-            if(src != "sites" || src != "getCategories"){
+            if(src != "sites" && src != "getCategories"){
                 alert(2);
                 for(var url in sources[src]){
                     // API changé
