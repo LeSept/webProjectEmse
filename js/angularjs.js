@@ -106,7 +106,7 @@ myApp
                 alert(2);
                 for(var url in sources[src]){
                     // API changé
-                    alert(3);
+                    alert(sources[src][url]);
                     feednami.loadGoogleFormat(sources[src][url],
                     function(result, src) {
                         if (!result.error) {
