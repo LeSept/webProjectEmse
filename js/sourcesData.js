@@ -26,7 +26,6 @@ var sources = {
     
     /* list of RSS grouped by source */
     "bbc": {
-        "business": "http://feeds.bbci.co.uk/news/business/rss.xml",
         "world" : "http://feeds.bbci.co.uk/news/world/rss.xml",
         "uk": "http://feeds.bbci.co.uk/news/uk/rss.xml",
         "politics": "http://feeds.bbci.co.uk/news/politics/rss.xml"
