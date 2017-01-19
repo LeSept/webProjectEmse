@@ -101,7 +101,7 @@ myApp
             if(src != "sites" && src != "getCategories"){
                 for(var url in sources[src]){
                     // API changé
-                    alert(sources[src][url]);
+
                     feednami.loadGoogleFormat(sources[src][url],
                     function(result, src) {
                         
