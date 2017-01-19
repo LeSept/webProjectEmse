@@ -21,7 +21,7 @@ var sources = {
     "sites": {
         "bbc": "bbc.co.uk",
         "france24": "france24.com",
-        "afp": "afp.com",
+        "afp": "afp.com"
     },
     
     /* list of RSS grouped by source */
