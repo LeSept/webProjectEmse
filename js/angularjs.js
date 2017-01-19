@@ -101,12 +101,11 @@ myApp
             if(src != "sites" && src != "getCategories"){
                 for(var url in sources[src]){
                     // API changé
-                    /*feednami.loadGoogleFormat(sources[src][url],
+                    feednami.loadGoogleFormat(sources[src][url],
                     function(result, src) {
                         if (!result.error) {
                             for (var i = 0; i < result.feed.entries.length; i++) {
                                 
-                                alert(4);
                                 date = result.feed.entries[i].publishedDate;
                                 
                                 //on détermine le type de l'article en fonction de la date
@@ -137,42 +136,7 @@ myApp
                             }
                         }
                         $scope.$apply();
-                    });*/
-                    alert(1);
-                    feednami.load(sources[src][url])
-                        .then(feed => {
-                          for(let entry of feed.entries){
-                              alert(2);
-                            /*date = entry.publishedDate;
-                                
-                                //on détermine le type de l'article en fonction de la date
-                                intervalle = (now.getFullYear()-date.substring(7,11))*86400*365+(now.getMonth()+1-getMonthFromString(date.substring(3,6)))*86400*30+(now.getDate()-date.substring(0,2))*86400+(now.getHours()-date.substring(12,14))*3600+(now.getMinutes()-date.substring(15,17))*60+(now.getSeconds()-date.substring(18,20));
-                                
-                                
-                                if(intervalle<12*3600){
-                                    type = "articles-large";
-                                }else if(intervalle<86400){
-                                    type = "articles-medium";
-                                }else{
-                                    type = "articles-small";
-                                }
-                                
-                                month = getMonthFromString(date.substring(3,6))<10 ? "0"+getMonthFromString(date.substring(3,6)):""+getMonthFromString(date.substring(3,6));
-                                
-                                //construction de le date de l'article. On ne peut pas a prendre telle qu'elle est car cela pose problème pour le tri
-                                date = date.substring(7,11)+"-"+month+"-"+date.substring(0,2)+" "+date.substring(12,20);
-                                
-                                //met en majuscule + enregistrement dans scope.allCategories + ajout ou non de l'article
-                                for(var element in result.feed.entries[i].categories){
-                                    result.feed.entries[i].categories[element] = result.feed.entries[i].categories[element].toUpperCase();
-                                    scope.allCategories.includes(result.feed.entries[i].categories[element]) ? true : scope.allCategories.push(result.feed.entries[i].categories[element]);
-                                }
-                                
-                                */
-                                scope.articles.push({"title":entry.title, "link":entry.link, "date":entry.date, "categories":entry.categories});
-                          }
-                        $scope.$apply();
-                        });
+                    });
                 
             }
         } 
@@ -185,6 +149,5 @@ myApp
 
     displayNews($scope);
     // on actualise les articles régulièrement
-    //window.setInterval(function(){displayNews($scope)}, 10000);
     
 }]);
