@@ -101,7 +101,7 @@ myApp
             if(src != "sites" && src != "getCategories"){
                 for(var url in sources[src]){
                     // API changé
-                    feednami.loadGoogleFormat(sources[src][url],
+                    /*feednami.loadGoogleFormat(sources[src][url],
                     function(result, src) {
                         if (!result.error) {
                             for (var i = 0; i < result.feed.entries.length; i++) {
@@ -136,6 +136,18 @@ myApp
                             }
                         }
                         $scope.$apply();
+                    });*/
+                    
+                    YUI().use('yql', function(Y){
+                        var query = 'select * from rss(0,5) where url = "'+sources[src][url]+'"'
+                        var q = Y.YQL(query, function(r){
+                            //r now contains the result of the YQL Query as a JSON
+                            var feed = r.query.results.item // get feed as array of entries
+                            for (var i=0; i<feed.length; i++){
+                                scope.articles.push({"title":feed[i].title, "contentSnippet":feed[i].description, "link":feed[i].link, "categories":feed[i].categories});
+                            }
+                            $scope.$apply();
+                        })
                     });
                 
             }
