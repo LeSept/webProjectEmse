@@ -87,8 +87,6 @@ myApp
 
 .controller("articlesSpace", ['$scope', function($scope){
     $scope.articles = new Array();
-    
-    
         
     displayNews = function(scope) {
     //on parcourt les catégories des sources à disposition
@@ -144,6 +142,7 @@ myApp
                     feednami.load(sources[src][url])
                         .then(feed => {
                           for(let entry of feed.entries){
+                              alert(2);
                             /*date = entry.publishedDate;
                                 
                                 //on détermine le type de l'article en fonction de la date
