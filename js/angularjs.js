@@ -101,7 +101,6 @@ myApp
             if(src != "sites"){
                 for(var url in sources[src]){
                     // API changé
-
                     feednami.loadGoogleFormat(sources[src][url],
                     function(result, src) {
                         
