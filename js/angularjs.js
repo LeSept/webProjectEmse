@@ -98,7 +98,7 @@ myApp
         var month = ""; // pour ecrire 01 au lieu de 1
         
         for(var src in sources){
-            if(src != "sites" && src != "getCategories"){
+            if(src != "sites"){
                 for(var url in sources[src]){
                     // API changé
 
@@ -106,9 +106,7 @@ myApp
                     function(result, src) {
                         
                         if (!result.error) {
-                            alert(sources[src][url]);
                             for (var i = 0; i < result.feed.entries.length; i++) {
-                                alert(1);
                                 date = result.feed.entries[i].publishedDate;
                                 
                                 //on détermine le type de l'article en fonction de la date
