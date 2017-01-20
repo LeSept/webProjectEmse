@@ -21,8 +21,7 @@ var sources = {
     "sites": {
         "bbc": "bbc.co.uk",
         "france24": "france24.com",
-        "afp": "afp.com",
-        "topito": "topito.com"
+        "afp": "afp.com"
     },
     
     /* list of RSS grouped by source */
@@ -39,13 +38,13 @@ var sources = {
         "europe": "http://www.france24.com/fr/europe/rss"
     },
     
-    "topito": {
-        "une":"http://feeds.feedburner.com/topito"
-    },
-    
     "lefigaro": {
         "une":"http://www.lefigaro.fr/rss/figaro_actualites-a-la-une.xml",
         "politique":"http://www.lefigaro.fr/rss/figaro_politique.xml"
+    },
+    
+    "cnn" : {
+        "world" : "http://rss.cnn.com/rss/edition_world.rss"
     }
     
 }
